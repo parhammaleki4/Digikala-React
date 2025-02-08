@@ -1,9 +1,18 @@
-import React, { Component, useState } from 'react';
+import React, { Component, useState, createRef } from 'react';
 const Footer = () => {
 
   const [isHidden , sethidden] = useState(1);
   const more = () => {sethidden(0)};
   const less = () => {sethidden(1)};
+  
+  let khabarName = [] 
+  let email = createRef()
+  const handleSubmit = (e)=>{ 
+    const input = e.currentTarget;
+    khabarName.push(email.current.value)
+    e.preventDefault()
+    console.log(khabarName)
+  }
 
   return ( <>
   <footer id="footer">
@@ -66,13 +75,13 @@ const Footer = () => {
           <div style={{marginTop: '32px'}}>
             <h4 style={{marginBottom: '12x', marginTop: '0px', color: 'rgb(63, 64, 100)', display: 'block'}}>با ثبت ایمیل، از جدیدترین تخفیف‌ها باخبر شوید</h4>
             <div>
-              <form style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+              <form onSubmit={handleSubmit} style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
                 <button id="sabt">
                   <div style={{color: 'white'}}>
                     ثبت
                   </div>
                 </button>
-                <input type="email" id="emailbar" placeholder="ایمیل شما"/>
+                <input ref={email} type="email" id="emailbar" placeholder="ایمیل شما"/>
               </form>
             </div>
           </div>
