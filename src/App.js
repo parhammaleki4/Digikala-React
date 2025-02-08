@@ -4,6 +4,7 @@ import Brands from './components/Brands';
 import Category from './components/Category';
 import Discounts from './components/Discounts';
 import Footer from './components/footer';
+import HotSell from './components/HotSell';
 import MostSeller from './components/MostSell';
 import Navbar from './components/Navbar';
 import Posters from './components/Posters';
@@ -129,7 +130,7 @@ function App() {
         <Recomended recommendations={recommendations2}/>
         <SmallPosters4/>
         <Discounts/>
-        <MostSeller mostSell={hotSell} title={'داغ ترین چند ساعت گذشته'}/>
+        <HotSell mostSell={hotSell} title={'داغ ترین چند ساعت گذشته'}/>
         <Reading/>
       </div>
       <Footer/>

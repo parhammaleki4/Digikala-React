@@ -7,7 +7,7 @@ import 'swiper/css/grid';
 import 'swiper/css/navigation';
 import { Grid , Navigation } from 'swiper/modules';
 
-const MostSeller = ({mostSell,title}) => {
+const HotSell = ({mostSell,title}) => {
 
   return ( <div style={{maxWidth:'1336px',margin:'auto'}}>
     <div style={{padding:'16px 0px',border: '1px solid rgb(214, 214, 214)',borderRadius:'15px',marginBottom:'16px',position:'relative'}}> 
@@ -18,10 +18,10 @@ const MostSeller = ({mostSell,title}) => {
       </div>
       <div style={{marginTop: '28px', padding: '0px 8px', display: 'flex',height: '298px',position:'relative'}}>
         <div style={{position:'absolute',left:'60px',top:'50%'}}>
-          <img id='swiper-button-next5' className="swiper-button-next" src="./img/arrowleft.jpeg" style={{width: '40px',borderRadius: '100%'}}/>
+          <img id='swiper-button-next6' className="swiper-button-next" src="./img/arrowleft.jpeg" style={{width: '40px',borderRadius: '100%'}}/>
         </div>
         <div style={{position:'absolute',right:'60px',top:'50%'}}>
-          <img id='swiper-button-prev5' className="swiper-button-prev" src="./img/arrowleft.jpeg" style={{width: '40px',borderRadius: '100%',transform: 'rotate(180deg)'}}/>
+          <img id='swiper-button-prev6' className="swiper-button-prev" src="./img/arrowleft.jpeg" style={{width: '40px',borderRadius: '100%',transform: 'rotate(180deg)'}}/>
         </div>
         <Swiper
           dir="rtl"
@@ -30,8 +30,8 @@ const MostSeller = ({mostSell,title}) => {
             rows: 3,
           }}
           navigation={{
-            nextEl: '#swiper-button-next5',
-            prevEl: '#swiper-button-prev5',
+            nextEl: '#swiper-button-next6',
+            prevEl: '#swiper-button-prev6',
             clickable: true,
           }}
           modules={[Grid , Navigation]}
@@ -55,4 +55,4 @@ const MostSeller = ({mostSell,title}) => {
   </div> );
 }
  
-export default MostSeller;
+export default HotSell;

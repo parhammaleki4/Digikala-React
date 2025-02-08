@@ -20,10 +20,10 @@ const Posters = ({isLoading}) => {
       ) : (
       <div style={{position:'relative'}}>
         <div style={{position:'absolute',right:'30px',bottom:'50px'}}>
-          <img  className="swiper-button-next" src="./img/arrowleft.jpeg" style={{width: '40px',borderRadius: '100%',transform: 'rotate(180deg)'}}/>
+          <img id='swiper-button-next2' className="swiper-button-next" src="./img/arrowleft.jpeg" style={{width: '40px',borderRadius: '100%',transform: 'rotate(180deg)'}}/>
         </div>
         <div style={{position:'absolute',right:'140px',bottom:'50px'}}>
-          <img className="swiper-button-prev" src="./img/arrowleft.jpeg" style={{width: '40px',borderRadius: '100%'}}/>
+          <img id='swiper-button-prev2' className="swiper-button-prev" src="./img/arrowleft.jpeg" style={{width: '40px',borderRadius: '100%'}}/>
         </div>
         <Swiper
           centeredSlides={true}
@@ -33,8 +33,8 @@ const Posters = ({isLoading}) => {
           }}
           pagination={true}
           navigation={{
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+            nextEl: '#swiper-button-next2',
+            prevEl: '#swiper-button-prev2',
             clickable: true,
           }}
           modules={[Autoplay,Pagination,Navigation]}

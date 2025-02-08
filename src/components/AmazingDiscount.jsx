@@ -32,17 +32,17 @@ const AmazingDiscount = () => {
   
     <div style={{width:'100%',height:'254px',borderRadius:'15px',backgroundColor:'rgb(214, 53, 53)',padding:'20px 0px',position:'relative'}}>
       <div style={{position:'absolute',left:'60px',top:'50%'}}>
-        <img className="swiper-button-next" src="./img/arrowleft.jpeg" style={{width: '40px',borderRadius: '100%'}}/>
+        <img id='swiper-button-next3' className="swiper-button-next" src="./img/arrowleft.jpeg" style={{width: '40px',borderRadius: '100%'}}/>
       </div>
       <div style={{position:'absolute',right:'60px',top:'50%'}}>
-        <img className="swiper-button-prev" src="./img/arrowleft.jpeg" style={{width: '40px',borderRadius: '100%',transform: 'rotate(180deg)'}}/>
+        <img id='swiper-button-prev3' className="swiper-button-prev" src="./img/arrowleft.jpeg" style={{width: '40px',borderRadius: '100%',transform: 'rotate(180deg)'}}/>
       </div>
       <Swiper style={{height:'254px'}}
           dir="rtl"
           slidesPerView={'auto'}
           navigation={{
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+            nextEl: '#swiper-button-next3',
+            prevEl: '#swiper-button-prev3',
             clickable: true,
           }}
           modules={[Navigation]}
