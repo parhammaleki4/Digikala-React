@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import AmazingDiscount from './components/AmazingDiscount';
 import Brands from './components/Brands';
@@ -106,8 +107,13 @@ function App() {
     {title: 'گوشی موبایل نوکیا با ساعت هوشمند اشغال خیلی خریدن توسیشو برا داداششون' , img: './img/watch1.jpg'},
     {title: 'گوشی موبایل نوکیا با ساعت هوشمند اشغال خیلی خریدن توسیشو برا داداششون' , img: './img/watch1.jpg'},
   ];
-  const isLoading = 0;
-  
+  const [isLoading , setIsLoading] = useState(1);
+  useEffect(() => {
+    setTimeout(() => {
+        setIsLoading(0);
+    }, 1000);})
+
+
   return (
     <div className="App">
       <Navbar/>

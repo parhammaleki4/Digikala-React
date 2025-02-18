@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './index.css';
-
+import './navbar.css'
+import Sections from './sections';
 
 const Navbar = () => {
   const location = {
@@ -8,6 +9,20 @@ const Navbar = () => {
     city: 'تهران'
   };
   const loggin = 1;
+  
+  const [dasteha,setdasteha] = useState("hidden");
+  const [isMenuClicked,setIsMenuClicked] = useState(false);
+
+  const updateMenu = () => {
+    if(!isMenuClicked) {
+      setdasteha("visible")
+    }
+    else {
+      setdasteha("hidden")
+    }
+    setIsMenuClicked(!isMenuClicked)
+  }
+
   return (
     <div>
       <div style={{ position: 'fixed', backgroundColor: 'hsl(0, 0%, 100%)', zIndex: 1000, top: 0 , width:'100%' }}>
@@ -53,20 +68,45 @@ const Navbar = () => {
               <img src="./img/Screenshot 2025-01-12 at 0.16.19.png" alt="loc" style={{ height: '20px', paddingLeft: '16px' }} />
             </div>
             <div id="contaner5">
+              <a>
               <div id="header">!در دیجی‌کالا بفروشید</div>
+              </a>
+              <a>
               <div id="header" style={{ paddingRight: '16px' }}>سوالی دارید؟</div>
+              </a>
+              <a>
               <div id="header" style={{ borderLeft: '1px solid #d6d6d6' }}>تخفیف‌ها و پیشنهاد‌ها</div>
+              </a>
+              <a>
               <img id="headerimg" src="./img/Screenshot 2025-01-12 at 0.15.41.png" alt="menu" />
+              </a>
               <div id="header">پرفروش‌ترین‌ها</div>
+              <a>
               <img id="headerimg" src="./img/Screenshot 2025-01-12 at 0.15.24.png" alt="menu" />
+              </a>
               <div id="header">طلای دیجیتال</div>
+              <a>
               <img id="headerimg" src="./img/Screenshot 2025-01-12 at 0.14.54.png" alt="menu" />
+              </a>
               <div id="header">سوپرمارکت</div>
+              <a>
               <img id="headerimg" src="./img/Screenshot 2025-01-12 at 0.14.26.png" alt="menu" />
+              </a>
               <div id="header">شگفت‌انگیز‌ها</div>
+              <a>
               <img id="headerimg" src="./img/Screenshot 2025-01-12 at 0.13.55.png" alt="menu" />
-              <div id="header" style={{ borderLeft: '1px solid #d6d6d6', color: 'black' }}><b>دسته‌بندی کالا‌ها</b></div>
-              <img id="headerimg" src="./img/Screenshot 2025-01-11 at 23.37.38.png" alt="menu" />
+              </a>
+              <div onMouseLeave={updateMenu} onMouseEnter={updateMenu}>
+                <nav>
+                  <div style={{display:'flex',alignItems:'center'}} >
+                    <div id="header" style={{ borderLeft: '1px solid #d6d6d6', color: 'black' }}><b>دسته‌بندی کالا‌ها</b></div>
+                    <img id="headerimg" src="./img/Screenshot 2025-01-11 at 23.37.38.png" alt="menu"/>
+                  </div>
+                </nav>
+                <div className={dasteha} id='dasteha'>
+                  <Sections/>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -1,0 +1,14 @@
+a{
+  cursor: pointer;
+  text-decoration: none;
+}
+#dasteha1 {
+  width: fit-content;
+  height: 550px;
+  background-color: hsl(0, 0%, 97%);
+  z-index: 1000px;
+  position: absolute;
+  right: 200px;
+  top: 0px;
+  border-bottom-left-radius: 15px;
+}
