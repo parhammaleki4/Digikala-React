@@ -19,8 +19,15 @@ import SmallPosters3 from './components/SmallPosters3';
 import SmallPosters4 from './components/SmallPosters4';
 import Story from './components/Story';
 import SuperMarket from './components/SuperMarket';
+export let MyContext = React.createContext();
 
 function App() {
+  const Brand = ["./img/Mercedes-Logo.svg.png","./img/suuu.png","./img/toyota-logo.png","./img/Dodge-logo.png","./img/ford-.png",
+    "./img/mitsu.png","./img/lesxus1.png","./img/Volkswagen_logo.png","./img/koenigsegg-logo-brandlogos.net_-1.png","./img/audi.jpg",
+    "./img/porsche_logo_PNG1.png","./img/Nissan_2020_logo.svg","./img/Mercedes-Logo.svg.png","./img/suuu.png","./img/toyota-logo.png","./img/Dodge-logo.png","./img/ford-.png",
+    "./img/mitsu.png","./img/lesxus1.png","./img/Volkswagen_logo.png","./img/koenigsegg-logo-brandlogos.net_-1.png","./img/audi.jpg",
+    "./img/porsche_logo_PNG1.png","./img/Nissan_2020_logo.svg"
+  ]
   const recommendations1 = [
     {
       title: "گوشی موبایل",
@@ -119,7 +126,9 @@ function App() {
         <SmallPosters1/>
         <Category/>
         <SmallPosters2/>
-        <Brands/>
+        <MyContext.Provider value={Brand}>
+          <Brands/>
+        </MyContext.Provider>
         <SmallPosters3/>
         <Recomended recommendations={recommendations1}/>
         <MostSeller mostSell={mostSell} title={'پرفروش‌ترین کالا‌ها'}/>

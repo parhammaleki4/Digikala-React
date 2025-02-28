@@ -1,18 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './index.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
+import { MyContext } from '../App';
 
 const Brands = () => {
-  const Brand = ["./img/Mercedes-Logo.svg.png","./img/suuu.png","./img/toyota-logo.png","./img/Dodge-logo.png","./img/ford-.png",
-    "./img/mitsu.png","./img/lesxus1.png","./img/Volkswagen_logo.png","./img/koenigsegg-logo-brandlogos.net_-1.png","./img/audi.jpg",
-    "./img/porsche_logo_PNG1.png","./img/Nissan_2020_logo.svg","./img/Mercedes-Logo.svg.png","./img/suuu.png","./img/toyota-logo.png","./img/Dodge-logo.png","./img/ford-.png",
-    "./img/mitsu.png","./img/lesxus1.png","./img/Volkswagen_logo.png","./img/koenigsegg-logo-brandlogos.net_-1.png","./img/audi.jpg",
-    "./img/porsche_logo_PNG1.png","./img/Nissan_2020_logo.svg"
-  ]
+  
+  let Brand = useContext(MyContext)
   
   return ( <div style={{maxWidth:'1336px',margin:'auto'}}>
     <div style={{padding: '24px 0px', border: '1px solid rgb(214, 214, 214)', borderRadius: '15px', marginBottom: '16px'}}>
