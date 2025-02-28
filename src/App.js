@@ -39,24 +39,6 @@ function App() {
       images: ["./img/watch1.jpg", "./img/watch2.jpg", "./img/watch3.jpg", "./img/wantch4.jpg"],
     },
   ];
-  const recommendations2 = [
-    {
-      title: "کنسول خانگی",
-      images: ["./img/konsol1.jpg", "./img/konsol2.jpg", "./img/konsol3.jpg", "./img/konsol4.jpg"],
-    },
-    {
-      title: "سایر لوازم خودرو",
-      images: ["/img/carp1.jpg", "/img/carp2.jpg", "/img/carp3.jpg", "/img/carp4.jpg"],
-    },
-    {
-      title: "ابزار آلات و تجهیزات",
-      images: ["./img/drl1.webp", "./img/drl2.webp", "./img/drl3.webp", "./img/drl4.webp"],
-    },
-    {
-      title: "ساعت هوشمند",
-      images: ["./img/tblt1.jpg", "./img/tblt2.jpg", "./img/tblt3.jpg", "./img/tblt4.jpg"],
-    },
-  ];
   let mostSell = [
     {title: 'گوشی موبایل نوکیا با ساعت هوشمند اشغال خیلی خریدن توسیشو برا داداششون' , img: './img/watch1.jpg'},
     {title: 'گوشی موبایل نوکیا با ساعت هوشمند اشغال' , img: './img/watch1.jpg'},
@@ -113,6 +95,14 @@ function App() {
         setIsLoading(0);
     }, 1000);})
 
+  const [products,setProducts] = useState([]);
+  const fetchP = async () => {
+    fetch("http://localhost:3004/recommendations2").then(data=>data.json()).then
+      (res=>setProducts(res)).catch((err)=>console.log(err))
+  }
+  useEffect(()=>{
+    fetchP()
+  })
 
   return (
     <div className="App">
@@ -133,7 +123,7 @@ function App() {
         <SmallPosters3/>
         <Recomended recommendations={recommendations1}/>
         <MostSeller mostSell={mostSell} title={'پرفروش‌ترین کالا‌ها'}/>
-        <Recomended recommendations={recommendations2}/>
+        <Recomended recommendations={products}/>
         <SmallPosters4/>
         <Discounts/>
         <HotSell mostSell={hotSell} title={'داغ ترین چند ساعت گذشته'}/>

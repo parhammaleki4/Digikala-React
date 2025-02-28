@@ -1,0 +1,20 @@
+{
+  "recommendations2": [
+    {
+      "title": "کنسول خانگی",
+      "images": ["./img/konsol1.jpg", "./img/konsol2.jpg", "./img/konsol3.jpg", "./img/konsol4.jpg"]
+    },
+    {
+      "title": "سایر لوازم خودرو",
+      "images": ["/img/carp1.jpg", "/img/carp2.jpg", "/img/carp3.jpg", "/img/carp4.jpg"]
+    },
+    {
+      "title": "ابزار آلات و تجهیزات",
+      "images": ["./img/drl1.webp", "./img/drl2.webp", "./img/drl3.webp", "./img/drl4.webp"]
+    },
+    {
+      "title": "ساعت هوشمند",
+      "images": ["./img/tblt1.jpg", "./img/tblt2.jpg", "./img/tblt3.jpg", "./img/tblt4.jpg"]
+    }
+  ]
+}
