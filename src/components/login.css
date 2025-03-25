@@ -1,0 +1,20 @@
+a{
+  cursor: pointer;
+  text-decoration: none;
+}
+#dasteha2 {
+  width: fit-content;
+  background-color: rgb(214, 53, 53);
+  z-index: 1000px;
+  position: absolute;
+  left: 10px;
+  top: 120px;
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+}
+#btm{
+  background-color: hsl(0, 0%, 97%);
+  border: 0px;
+  margin: 25px;
+}

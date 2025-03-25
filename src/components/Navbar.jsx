@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
 import './index.css';
-import './navbar.css'
+import './navbar.css';
+import './login.css';
 import Sections from './sections';
+import Login from './login';
+import {useSelector} from 'react-redux';
 
 const Navbar = () => {
-  const location = {
-    province: 'تهران',
-    city: 'تهران'
-  };
-  const loggin = 1;
+  const selector = useSelector((state)=> state.user)
+  const loggin = selector.loggin;
+
+  const selector1 = useSelector((state)=> state.location)
   
   const [dasteha,setdasteha] = useState("hidden");
   const [isMenuClicked,setIsMenuClicked] = useState(false);
-
   const updateMenu = () => {
     if(!isMenuClicked) {
       setdasteha("visible")
@@ -21,6 +22,18 @@ const Navbar = () => {
       setdasteha("hidden")
     }
     setIsMenuClicked(!isMenuClicked)
+  }
+
+  const [dasteha2,setdasteha2] = useState("hidden");
+  const [isMenuClicked2,setIsMenuClicked2] = useState(false);
+  const updateMenu1 = () => {
+    if(!isMenuClicked2) {
+      setdasteha2("visible")
+    }
+    else {
+      setdasteha2("hidden")
+    }
+    setIsMenuClicked2(!isMenuClicked2)
   }
 
   return (
@@ -35,20 +48,32 @@ const Navbar = () => {
             <span style={{margin: '0px 12px 0px 22px',borderLeft: '1px solid  rgb(224, 224, 226)',height:'24px'}}></span>
             {loggin ? (
               <div style={{display:'flex',alignItems:'center'}}>
-                <a href="#">
-                  <img src="./img/Screenshot 2025-01-11 at 12.57.36.png" alt="person" width="65" />
-                </a>
+                <div>
+                  <a href="#" onClick={updateMenu1}>
+                    <img src="./img/Screenshot 2025-01-11 at 12.57.36.png" alt="person" width="65" />
+                  </a>
+                  <div className={dasteha2} id='dasteha2'>
+                    <Login />
+                  </div>
+                </div>
                 <a href="#">
                   <img src="./img/Screenshot 2025-01-11 at 12.51.27.png" alt="ring bell" height="25" style={{ margin: '12px' }} />
                 </a>
               </div>
               ):(
+              <div>
                 <button style={{height:'40px',backgroundColor:'white',border:'1px solid rgb(224, 224, 226)',
                   borderRadius:'5px',alignItems:'center',display:'flex',width:'134px',justifyContent:'center'
                 }}>
-                  <b>ورود | ثبت‌نام</b>
-                  <img src='./img/login.png' width={24} style={{marginLeft:'8px'}}/>
+                  <nav style={{display:'flex',alignItems:'center',justifyContent:'center'}} onClick={updateMenu1}>
+                    <b>ورود | ثبت‌نام</b>
+                    <img src='./img/login.png' width={24} style={{marginLeft:'8px'}}/>
+                  </nav>
                 </button>
+                <div className={dasteha2} id='dasteha2'>
+                  <Login />
+                </div>
+              </div>
               )}
           </div>
           <div id="contaner2">
@@ -64,7 +89,7 @@ const Navbar = () => {
         <div>
           <div id="contaner3">
             <div id="contaner4">
-              <div id="header">ارسال به {location.province}، {location.city}</div>
+              <div id="header">ارسال به {selector1.province}، {selector1.city}</div>
               <img src="./img/Screenshot 2025-01-12 at 0.16.19.png" alt="loc" style={{ height: '20px', paddingLeft: '16px' }} />
             </div>
             <div id="contaner5">

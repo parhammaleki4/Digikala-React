@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { Provider } from 'react-redux';
+import { store } from './Store'
 import './App.css';
 import AmazingDiscount from './components/AmazingDiscount';
 import Brands from './components/Brands';
@@ -20,6 +22,7 @@ import SmallPosters4 from './components/SmallPosters4';
 import Story from './components/Story';
 import SuperMarket from './components/SuperMarket';
 export let MyContext = React.createContext();
+
 
 function App() {
   const Brand = ["./img/Mercedes-Logo.svg.png","./img/suuu.png","./img/toyota-logo.png","./img/Dodge-logo.png","./img/ford-.png",
@@ -113,32 +116,34 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar/>
-      <div style={{margin:'0px 20px'}}>
-        <Story isLoading={isLoading}/>
-      </div>
-      <Posters isLoading={isLoading}/>
-      <div style={{margin:'0px 20px'}}>
-        <Shortcuts isLoading={isLoading}/>
-        <AmazingDiscount/>
-        <SmallPosters/>
-        <SuperMarket/>
-        <SmallPosters1/>
-        <Category/>
-        <SmallPosters2/>
-        <MyContext.Provider value={Brand}>
-          <Brands/>
-        </MyContext.Provider>
-        <SmallPosters3/>
-        <Recomended recommendations={recommendations1}/>
-        <MostSeller mostSell={mostSell} title={'پرفروش‌ترین کالا‌ها'}/>
-        <Recomended recommendations={products}/>
-        <SmallPosters4/>
-        <Discounts/>
-        <HotSell mostSell={hotSell} title={'داغ ترین چند ساعت گذشته'}/>
-        <Reading/>
-      </div>
-      <Footer/>
+      <Provider store={store}>
+        <Navbar/>
+        <div style={{margin:'0px 20px'}}>
+          <Story isLoading={isLoading}/>
+        </div>
+        <Posters isLoading={isLoading}/>
+        <div style={{margin:'0px 20px'}}>
+          <Shortcuts isLoading={isLoading}/>
+          <AmazingDiscount/>
+          <SmallPosters/>
+          <SuperMarket/>
+          <SmallPosters1/>
+          <Category/>
+          <SmallPosters2/>
+          <MyContext.Provider value={Brand}>
+            <Brands/>
+          </MyContext.Provider>
+          <SmallPosters3/>
+          <Recomended recommendations={recommendations1}/>
+          <MostSeller mostSell={mostSell} title={'پرفروش‌ترین کالا‌ها'}/>
+          <Recomended recommendations={products}/>
+          <SmallPosters4/>
+          <Discounts/>
+          <HotSell mostSell={hotSell} title={'داغ ترین چند ساعت گذشته'}/>
+          <Reading/>
+        </div>
+        <Footer/>
+      </Provider>
     </div>
   );
 }
