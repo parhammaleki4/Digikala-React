@@ -1,27 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { useSelector} from 'react-redux';
 
 const Discounts = () => {
 
-  let discount = [
-    {img:'./img/tblt1.jpg' , fprice: '۱۰۰,۰۰۰,۰۰۰' , lprice: '۹۹,۰۰۰,۰۰۰'},
-    {img:'./img/tblt1.jpg' , fprice: '۱۰۰,۰۰۰,۰۰۰' , lprice: '۹۹,۰۰۰,۰۰۰'},
-    {img:'./img/tblt1.jpg' , fprice: '۱۰۰,۰۰۰,۰۰۰' , lprice: '۹۹,۰۰۰,۰۰۰'},
-    {img:'./img/tblt1.jpg' , fprice: '۱۰۰,۰۰۰,۰۰۰' , lprice: '۹۹,۰۰۰,۰۰۰'},
-    {img:'./img/tblt1.jpg' , fprice: '۱۰۰,۰۰۰,۰۰۰' , lprice: '۹۹,۰۰۰,۰۰۰'},
-    {img:'./img/tblt1.jpg' , fprice: '۱۰۰,۰۰۰,۰۰۰' , lprice: '۹۹,۰۰۰,۰۰۰'},
-    {img:'./img/tblt1.jpg' , fprice: '۱۰۰,۰۰۰,۰۰۰' , lprice: '۹۹,۰۰۰,۰۰۰'},
-    {img:'./img/tblt1.jpg' , fprice: '۱۰۰,۰۰۰,۰۰۰' , lprice: '۹۹,۰۰۰,۰۰۰'},
-    {img:'./img/tblt1.jpg' , fprice: '۱۰۰,۰۰۰,۰۰۰' , lprice: '۹۹,۰۰۰,۰۰۰'},
-    {img:'./img/tblt1.jpg' , fprice: '۱۰۰,۰۰۰,۰۰۰' , lprice: '۹۹,۰۰۰,۰۰۰'},
-    {img:'./img/tblt1.jpg' , fprice: '۱۰۰,۰۰۰,۰۰۰' , lprice: '۹۹,۰۰۰,۰۰۰'},
-    {img:'./img/tblt1.jpg' , fprice: '۱۰۰,۰۰۰,۰۰۰' , lprice: '۹۹,۰۰۰,۰۰۰'},
-    {img:'./img/tblt1.jpg' , fprice: '۱۰۰,۰۰۰,۰۰۰' , lprice: '۹۹,۰۰۰,۰۰۰'},
-    {img:'./img/tblt1.jpg' , fprice: '۱۰۰,۰۰۰,۰۰۰' , lprice: '۹۹,۰۰۰,۰۰۰'},
-    {img:'./img/tblt1.jpg' , fprice: '۱۰۰,۰۰۰,۰۰۰' , lprice: '۹۹,۰۰۰,۰۰۰'},
-    {img:'./img/tblt1.jpg' , fprice: '۱۰۰,۰۰۰,۰۰۰' , lprice: '۹۹,۰۰۰,۰۰۰'},
-    {img:'./img/tblt1.jpg' , fprice: '۱۰۰,۰۰۰,۰۰۰' , lprice: '۹۹,۰۰۰,۰۰۰'},
-    {img:'./img/tblt1.jpg' , fprice: '۱۰۰,۰۰۰,۰۰۰' , lprice: '۹۹,۰۰۰,۰۰۰'},
-  ]
+  const selector = useSelector((state)=> state.categorys)
+  let discount = selector.categ;
+  
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const handleResize = () => { setWindowWidth(window.innerWidth) };
   useEffect(() => { window.addEventListener('resize', handleResize) });

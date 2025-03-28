@@ -1,26 +1,11 @@
 import React, { Component } from 'react';
+import { useSelector} from 'react-redux';
 
 const Category = () => {
 
-  let category = [
-    { title: 'طلا و نقره' , img: './img/talanoghre.png' },
-    { title: 'مد و پوشاک' , img: './img/kifkafsh.png' },
-    { title: 'لوازم خانگی برقی' , img: './img/barghi.png' },
-    { title: 'خودرو و موتورسیکلت' , img: './img/car.png' },
-    { title: 'آرایشی بهداشتی' , img: './img/beauty.png' },
-    { title: 'خانه و آشپزخانه' , img: './img/home.png' },
-    { title: 'کالای دیجیتال' , img: './img/digital.png' },
-    { title: 'موبایل' , img: './img/mobile.png' },
-    { title: 'محصولات بومی و محلی' , img: './img/boomi.png' },
-    { title: 'اسباب بازی کودک و نوزاد' , img: './img/toy.png' },
-    { title: 'کالای خوراکی اساسی' , img: './img/khoraki.png' },
-    { title: 'کارت هدیه و گیفت کارت' , img: './img/giftcard.png' },
-    { title: 'ورزش و سفر' , img: './img/sport.png' },
-    { title: 'کتاب، لوازم تحریر و هنر' , img: './img/ketab.png' },
-    { title: 'ابزار آلات و تجهیزات' , img: './img/drel.png' },
-    { title: 'تجهیزات پزشکی و سلامت' , img: './img/pezeshki.png' },
-  ]
-
+  const selector = useSelector((state)=> state.categorys)
+  let category = selector.categ;
+  
   return ( <div style={{maxWidth:'1336px',margin:'auto'}}>
 
 <div>

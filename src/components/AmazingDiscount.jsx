@@ -6,27 +6,13 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
 
+import { useSelector} from 'react-redux';
+
 const AmazingDiscount = () => {
 
-  let discount = [
-    {title: 'ساعت هوشمند ورنا مدل فیک دوغوز آبادی W49 Ultra ساعت هوشمند ورنا مدل' , img: './img/watch1.jpg' , lprice: '۹۹,۰۰۰,۰۰۰' , fprice: '۱۰۰,۰۰۰,۰۰۰'},
-    {title: 'ساعت هوشمند ورنا مدل  W49 Ultra ساعت هوشمند ورنا مدل' , img: './img/watch2.jpg' , lprice: '۹۹,۰۰۰,۰۰۰' , fprice: '۱۰۰,۰۰۰,۰۰۰'},
-    {title: 'ساعت هوشمند ورنا مدل  W49 Ultra ساعت هوشمند ورنا مدل' , img: './img/watch3.jpg' , lprice: '۹۹,۰۰۰,۰۰۰' , fprice: '۱۰۰,۰۰۰,۰۰۰'},
-    {title: 'ساعت هوشمند ورنا مدل  W49 Ultra ساعت هوشمند ورنا مدل' , img: './img/watch2.jpg' , lprice: '۹۹,۰۰۰,۰۰۰' , fprice: '۱۰۰,۰۰۰,۰۰۰'},
-    {title: 'ساعت هوشمند ورنا مدل  W49 Ultra ساعت هوشمند ورنا مدل' , img: './img/watch3.jpg' , lprice: '۹۹,۰۰۰,۰۰۰' , fprice: '۱۰۰,۰۰۰,۰۰۰'},
-    {title: 'ساعت هوشمند ورنا مدل  W49 Ultra ساعت هوشمند ورنا مدل' , img: './img/watch1.jpg' , lprice: '۹۹,۰۰۰,۰۰۰' , fprice: '۱۰۰,۰۰۰,۰۰۰'},
-    {title: 'W49 Ultra ساعت هوشمند' , img: './img/watch1.jpg' , lprice: '۹۹,۰۰۰,۰۰۰' , fprice: '۱۰۰,۰۰۰,۰۰۰'},
-    {title: 'ساعت هوشمند ورنا مدل  W49 Ultra ساعت هوشمند ورنا مدل' , img: './img/watch3.jpg' , lprice: '۹۹,۰۰۰,۰۰۰' , fprice: '۱۰۰,۰۰۰,۰۰۰'},
-    {title: 'ساعت هوشمند ورنا مدل  W49 Ultra ساعت هوشمند ورنا مدل' , img: './img/watch2.jpg' , lprice: '۹۹,۰۰۰,۰۰۰' , fprice: '۱۰۰,۰۰۰,۰۰۰'},
-    {title: 'ساعت هوشمند ورنا مدل  W49 Ultra ساعت هوشمند ورنا مدل' , img: './img/watch3.jpg' , lprice: '۹۹,۰۰۰,۰۰۰' , fprice: '۱۰۰,۰۰۰,۰۰۰'},
-    {title: 'ساعت هوشمند ورنا مدل  W49 Ultra ساعت هوشمند ورنا مدل' , img: './img/watch1.jpg' , lprice: '۹۹,۰۰۰,۰۰۰' , fprice: '۱۰۰,۰۰۰,۰۰۰'},
-    {title: 'ساعت هوشمند ورنا مدل  W49 Ultra ساعت هوشمند ورنا مدل' , img: './img/watch1.jpg' , lprice: '۹۹,۰۰۰,۰۰۰' , fprice: '۱۰۰,۰۰۰,۰۰۰'},
-    {title: 'ساعت هوشمند ورنا مدل  W49 Ultra ساعت هوشمند ورنا مدل' , img: './img/watch3.jpg' , lprice: '۹۹,۰۰۰,۰۰۰' , fprice: '۱۰۰,۰۰۰,۰۰۰'},
-    {title: 'ساعت هوشمند ورنا مدل  W49 Ultra ساعت هوشمند ورنا مدل' , img: './img/watch2.jpg' , lprice: '۹۹,۰۰۰,۰۰۰' , fprice: '۱۰۰,۰۰۰,۰۰۰'},
-    {title: 'ساعت هوشمند ورنا مدل  W49 Ultra ساعت هوشمند ورنا مدل' , img: './img/watch3.jpg' , lprice: '۹۹,۰۰۰,۰۰۰' , fprice: '۱۰۰,۰۰۰,۰۰۰'},
-    {title: 'ساعت هوشمند ورنا مدل  W49 Ultra ساعت هوشمند ورنا مدل' , img: './img/watch1.jpg' , lprice: '۹۹,۰۰۰,۰۰۰' , fprice: '۱۰۰,۰۰۰,۰۰۰'},
-    {title: 'ساعت هوشمند ورنا مدل  W49 Ultra ساعت هوشمند ورنا مدل' , img: './img/watch1.jpg' , lprice: '۹۹,۰۰۰,۰۰۰' , fprice: '۱۰۰,۰۰۰,۰۰۰'},
-  ]
+
+  const selector = useSelector((state)=> state.ADiscount)
+  let discount = selector.discount;
 
   return ( <div style={{maxWidth:'1336px',margin:'auto'}}>
   
