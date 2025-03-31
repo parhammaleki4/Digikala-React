@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {login,logout} from './../Store';
+import {login} from './../Store';
 import {useDispatch , useSelector} from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -21,12 +21,14 @@ const Login = () => {
             سلام
             </p>
             <p style={{display:'flex',justifyContent:'right',margin:'4px 0px 16px 0px',fontSize:'12px'}}>
-            لطفا شماره مبایل یا ایمیل خود را وارد کنید
+            لطفا نام و نام‌خانوادگی خود را وارد کنید
             </p>
           </div>
-        <input onChange={(event)=>{setNewUser(event.target.value)}}/>
+        <input id="logininput" onChange={(event)=>{setNewUser(event.target.value)}}/>
         <Link to="./back" id="btm" onClick={()=>dispatch(login( {userName: newUser} ))}><b>ورود</b></Link>
-        <Link to="./back" id="btm" onClick={()=>dispatch(logout( ))}><b>خروج</b></Link>
+        <p style={{display:'flex',justifyContent:'right',margin:'16px 0px 0px 0px',fontSize:'11px',textAlign:'right'}}>
+        ورود شما به معنای پذیرش شرایط دیجی‌کالا و قوانین حریم‌ خصوصی است
+        </p>
       </div>
     </div> );
 }

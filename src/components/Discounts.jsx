@@ -3,8 +3,8 @@ import { useSelector} from 'react-redux';
 
 const Discounts = () => {
 
-  const selector = useSelector((state)=> state.categorys)
-  let discount = selector.categ;
+  const selector = useSelector((state)=> state.discount)
+  let discount = selector.diss;
   
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const handleResize = () => { setWindowWidth(window.innerWidth) };

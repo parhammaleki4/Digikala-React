@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import './index.css';
 import './navbar.css';
 import './login.css';
+import './user.css';
 import Sections from './sections';
 import Login from './login';
 import {useSelector} from 'react-redux';
 import { Link } from 'react-router-dom';
+import User from './user';
 
 
 const Navbar = () => {
@@ -38,6 +40,21 @@ const Navbar = () => {
     setIsMenuClicked2(!isMenuClicked2)
   }
 
+  const [person , setPerson] = useState("./img/Screenshot 2025-01-11 at 12.57.36.png");
+  const [dasteha3,setdasteha3] = useState("hidden");
+  const [isMenuClicked3,setIsMenuClicked3] = useState(false);
+  const updateMenu3 = () => {
+    if(!isMenuClicked3) {
+      setdasteha3("visible")
+      setPerson("./img/Screenshot 2025-01-11 at 13.38.37.jpeg")      
+    }
+    else {
+      setdasteha3("hidden")
+      setPerson("./img/Screenshot 2025-01-11 at 12.57.36.png")
+    }
+    setIsMenuClicked3(!isMenuClicked3)
+  }
+
   return (
     <div>
       <div style={{ position: 'fixed', backgroundColor: 'hsl(0, 0%, 100%)', zIndex: 1000, top: 0 , width:'100%' }}>
@@ -51,11 +68,11 @@ const Navbar = () => {
             {loggin ? (
               <div style={{display:'flex',alignItems:'center'}}>
                 <div>
-                  <Link to='./login' onClick={updateMenu1}>
-                    <img src="./img/Screenshot 2025-01-11 at 12.57.36.png" alt="person" width="65" />
-                  </Link>
-                  <div className={dasteha2} id='dasteha2'>
-                    <Login />
+                  <a onClick={updateMenu3}>
+                    <img src={person} alt="person" width="65" />
+                  </a>
+                  <div className={dasteha3} id='dasteha3'>
+                    <User />
                   </div>
                 </div>
                 <a href="#">

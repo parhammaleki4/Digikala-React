@@ -1,0 +1,61 @@
+a{
+  cursor: pointer;
+  text-decoration: none;
+}
+#dasteha3 {
+  width: fit-content;
+  height: 409px;
+  width: 256px;
+  background-color: #ffffff;
+  box-shadow: 0 0px 4px hwb(0 43% 57%);
+  z-index: 1000px;
+  position: absolute;
+  left: 82px;
+  top: 118px;
+  border-radius: 10px;
+}
+#name{
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  height: 32px;
+  padding: 16px 0px;
+  margin: 0px 16px;
+  border-bottom: 1px solid rgb(240, 240, 241);
+  color: rgb(63, 64, 100);
+  font-weight: bold;
+}
+ul{
+  margin: 0px;
+  padding: 0px;
+}
+li{
+  padding: 0px 16px;
+  list-style-type: none;
+  direction: rtl;
+  display: flex;
+  align-content: center;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  height: 47px;
+}
+#liText{
+  color: rgb(63, 64, 100);
+  padding: 8px 0px;
+  width: 176px;
+  text-align: right;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  border-bottom: 1px solid rgb(240, 240, 241);
+  height: 31px;
+}
+#logout{
+  color: rgb(63, 64, 100);
+  padding: 8px 0px;
+  font-weight: bold;
+  height: 31px;
+  display: flex;
+  align-items: center;
+}

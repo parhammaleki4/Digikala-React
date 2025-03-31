@@ -12,25 +12,30 @@ a{
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 32px;
 }
 #maindiv{
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: 12% 0%;
 }
 #insidediv{
   border: 1px solid rgb(224, 224, 226);
   width: 336px;
-  height: 416px;
+  height: 100%;
   border-radius: 10px;
   padding: 32px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-input{
+#logininput{
   height: 46px;
   border-radius: 5px;
   border: 1px solid  rgb(211, 47, 47);
+  direction: rtl;
+  font-size: 15px;
+  font-style: bold;
+  padding: 0px 10px 0px 0px;
 }
