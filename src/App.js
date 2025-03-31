@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Provider } from 'react-redux';
 import { store } from './Store'
+import { BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
 import './App.css';
 import AmazingDiscount from './components/AmazingDiscount';
 import Brands from './components/Brands';
@@ -21,6 +22,7 @@ import SmallPosters3 from './components/SmallPosters3';
 import SmallPosters4 from './components/SmallPosters4';
 import Story from './components/Story';
 import SuperMarket from './components/SuperMarket';
+import Login from './components/login';
 export let MyContext = React.createContext();
 
 
@@ -114,35 +116,44 @@ function App() {
     fetchP()
   })
 
+  
   return (
     <div className="App">
       <Provider store={store}>
-        <Navbar/>
-        <div style={{margin:'0px 20px'}}>
-          <Story isLoading={isLoading}/>
-        </div>
-        <Posters isLoading={isLoading}/>
-        <div style={{margin:'0px 20px'}}>
-          <Shortcuts isLoading={isLoading}/>
-          <AmazingDiscount/>
-          <SmallPosters/>
-          <SuperMarket/>
-          <SmallPosters1/>
-          <Category/>
-          <SmallPosters2/>
-          <MyContext.Provider value={Brand}>
-            <Brands/>
-          </MyContext.Provider>
-          <SmallPosters3/>
-          <Recomended recommendations={recommendations1}/>
-          <MostSeller mostSell={mostSell} title={'پرفروش‌ترین کالا‌ها'}/>
-          <Recomended recommendations={products}/>
-          <SmallPosters4/>
-          <Discounts/>
-          <HotSell mostSell={hotSell} title={'داغ ترین چند ساعت گذشته'}/>
-          <Reading/>
-        </div>
-        <Footer/>
+        <Router>
+          <Routes>
+            <Route path="/login/back" element={<Navigate replace to="/" />} />
+            <Route path='/login' element={<Login/>}/>
+            <Route path='/' element={ <>
+              <Navbar/>
+              <div style={{margin:'0px 20px'}}>
+                <Story isLoading={isLoading}/>
+              </div>
+              <Posters isLoading={isLoading}/>
+              <div style={{margin:'0px 20px'}}>
+                <Shortcuts isLoading={isLoading}/>
+                <AmazingDiscount/>
+                <SmallPosters/>
+                <SuperMarket/>
+                <SmallPosters1/>
+                <Category/>
+                <SmallPosters2/>
+                <MyContext.Provider value={Brand}>
+                <Brands/>
+                </MyContext.Provider>
+                <SmallPosters3/>
+                <Recomended recommendations={recommendations1}/>
+                <MostSeller mostSell={mostSell} title={'پرفروش‌ترین کالا‌ها'}/>
+                <Recomended recommendations={products}/>
+                <SmallPosters4/>
+                <Discounts/>
+                <HotSell mostSell={hotSell} title={'داغ ترین چند ساعت گذشته'}/>
+                <Reading/>
+              </div>
+              <Footer/>
+            </>}/>
+          </Routes>
+        </Router>
       </Provider>
     </div>
   );

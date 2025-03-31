@@ -5,6 +5,8 @@ import './login.css';
 import Sections from './sections';
 import Login from './login';
 import {useSelector} from 'react-redux';
+import { Link } from 'react-router-dom';
+
 
 const Navbar = () => {
   const selector = useSelector((state)=> state.user)
@@ -49,9 +51,9 @@ const Navbar = () => {
             {loggin ? (
               <div style={{display:'flex',alignItems:'center'}}>
                 <div>
-                  <a href="#" onClick={updateMenu1}>
+                  <Link to='./login' onClick={updateMenu1}>
                     <img src="./img/Screenshot 2025-01-11 at 12.57.36.png" alt="person" width="65" />
-                  </a>
+                  </Link>
                   <div className={dasteha2} id='dasteha2'>
                     <Login />
                   </div>
@@ -65,10 +67,12 @@ const Navbar = () => {
                 <button style={{height:'40px',backgroundColor:'white',border:'1px solid rgb(224, 224, 226)',
                   borderRadius:'5px',alignItems:'center',display:'flex',width:'134px',justifyContent:'center'
                 }}>
-                  <nav style={{display:'flex',alignItems:'center',justifyContent:'center'}} onClick={updateMenu1}>
-                    <b>ورود | ثبت‌نام</b>
-                    <img src='./img/login.png' width={24} style={{marginLeft:'8px'}}/>
-                  </nav>
+                  <Link to='./login' onClick={updateMenu1}>
+                    <div style={{display:'flex',alignItems:'center',justifyContent:'center',color:'black'}}>
+                      <b>ورود | ثبت‌نام</b>
+                      <img src='./img/login.png' width={24} style={{marginLeft:'8px'}}/>
+                    </div>
+                  </Link>
                 </button>
                 <div className={dasteha2} id='dasteha2'>
                   <Login />

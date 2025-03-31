@@ -2,19 +2,35 @@ a{
   cursor: pointer;
   text-decoration: none;
 }
-#dasteha2 {
-  width: fit-content;
-  background-color: rgb(214, 53, 53);
-  z-index: 1000px;
-  position: absolute;
-  left: 10px;
-  top: 120px;
-  width: 200px;
-  height: 200px;
-  border-radius: 20px;
-}
 #btm{
-  background-color: hsl(0, 0%, 97%);
+  background-color: rgb(239, 64, 86);
+  color: white;
+  font-size: 14px;
   border: 0px;
-  margin: 25px;
+  height: 48px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#maindiv{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#insidediv{
+  border: 1px solid rgb(224, 224, 226);
+  width: 336px;
+  height: 416px;
+  border-radius: 10px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+input{
+  height: 46px;
+  border-radius: 5px;
+  border: 1px solid  rgb(211, 47, 47);
 }
