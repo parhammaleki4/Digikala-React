@@ -2,7 +2,11 @@ import { configureStore , createSlice } from '@reduxjs/toolkit';
 
 const userSlice = createSlice({
   name: 'user' , 
-  initialState: {userName : '' , loggin : 0} ,
+  initialState: {
+    userName : '' ,
+    loggin : 0 ,
+    dgclubScore : 180
+  },
   reducers: {
     login : (state , action) => {
       state.userName = action.payload.userName;

@@ -41,7 +41,7 @@ const Sections = () => {
     styleWindo.splice(i,0,{display:'flex',alignItems:'center',backgroundColor:'#ecedef'})
   }
 
-  return ( <div style={{backgroundColor:'Highlight',WebkitBackdropFilter:'grey'}}>
+  return ( <div>
     {daste.map((rec, index) => (
       <div>
         <nav>
